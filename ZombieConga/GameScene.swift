@@ -20,7 +20,6 @@ class GameScene: SKScene {
 	var lastTouchLocation: CGPoint?
 	let zombieRotateRadiansPerSec: CGFloat = 4.0 * π
 	
-	
 	override init(size: CGSize) {
 		let maxAspectRatio: CGFloat = 16.0/9.0
 		let playableHeight = size.width / maxAspectRatio
@@ -59,11 +58,11 @@ class GameScene: SKScene {
 		background.zPosition = -1
 		
 		zombie.position = CGPoint(x: 400, y: 400)
-		//zombie.setScale(2) // SKNode method to double size
 		
 		addChild(background)
 		addChild(zombie)
 		
+		spawnEnemy()
 		debugDrawPlayableArea()
 	}
 	
@@ -86,7 +85,6 @@ class GameScene: SKScene {
 				rotate(sprite: zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
 			}
 		}
-		
 		boundsCheckZombie()
 	}
 	
@@ -151,6 +149,21 @@ class GameScene: SKScene {
 		sprite.zRotation += shortest.sign() * amountToRotate
 	}
 	
+	func spawnEnemy() {
+		let enemy = SKSpriteNode(imageNamed: "enemy")
+		enemy.position = CGPoint(x: size.width + enemy.size.width/2,
+		                         y: size.height/2)
+		addChild(enemy)
+		
+		let actionMidMove = SKAction.move(to: CGPoint(x: size.width/2,
+		                                           y: playableRect.minY + enemy.size.height/2),
+		                               duration: 1.0)
+		let actionMove = SKAction.move(to: CGPoint(x: -enemy.size.width/2,
+		                                           y: enemy.position.y),
+		                               duration: 1.0)
+		let sequence = SKAction.sequence([actionMidMove, actionMove])
+		enemy.run(sequence)
+	}
 	
 	
 	
