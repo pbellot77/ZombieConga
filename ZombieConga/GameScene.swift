@@ -82,7 +82,8 @@ class GameScene: SKScene {
 				velocity = CGPoint.zero
 			} else {
 				move(sprite: zombie, velocity: velocity)
-				rotate(sprite: zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
+				rotate(sprite: zombie, direction: velocity,
+				       rotateRadiansPerSec: zombieRotateRadiansPerSec)
 			}
 		}
 		boundsCheckZombie()
@@ -144,8 +145,10 @@ class GameScene: SKScene {
 	}
 	
 	func rotate(sprite: SKSpriteNode, direction: CGPoint, rotateRadiansPerSec: CGFloat) {
-		let shortest = shortestAngleBetween(angle1: sprite.zRotation, angle2: velocity.angle)
-		let amountToRotate = min(rotateRadiansPerSec * CGFloat(dt), abs(shortest))
+		let shortest = shortestAngleBetween(angle1: sprite.zRotation,
+		                                    angle2: velocity.angle)
+		let amountToRotate = min(rotateRadiansPerSec * CGFloat(dt),
+		                         abs(shortest))
 		sprite.zRotation += shortest.sign() * amountToRotate
 	}
 	
@@ -156,8 +159,8 @@ class GameScene: SKScene {
 		addChild(enemy)
 		
 		let actionMidMove = SKAction.move(to: CGPoint(x: size.width/2,
-		                                           y: playableRect.minY + enemy.size.height/2),
-		                               duration: 1.0)
+		                                              y: playableRect.minY + enemy.size.height/2),
+		                                  duration: 1.0)
 		let actionMove = SKAction.move(to: CGPoint(x: -enemy.size.width/2,
 		                                           y: enemy.position.y),
 		                               duration: 1.0)
