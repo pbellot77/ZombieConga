@@ -13,6 +13,7 @@
 		BAD17AC01E2C11740029094F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD17ABE1E2C11740029094F /* Main.storyboard */; };
 		BAD17AC21E2C11740029094F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD17AC11E2C11740029094F /* Assets.xcassets */; };
 		BAD17AC51E2C11740029094F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD17AC31E2C11740029094F /* LaunchScreen.storyboard */; };
+		BAD17ACD1E2FD40A0029094F /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD17ACC1E2FD40A0029094F /* MyUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BAD17AC11E2C11740029094F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAD17AC41E2C11740029094F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAD17AC61E2C11740029094F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD17ACC1E2FD40A0029094F /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				BAD17AB41E2C11740029094F /* AppDelegate.swift */,
 				BAD17ABA1E2C11740029094F /* GameScene.swift */,
 				BAD17ABC1E2C11740029094F /* GameViewController.swift */,
+				BAD17ACC1E2FD40A0029094F /* MyUtils.swift */,
 				BAD17ABE1E2C11740029094F /* Main.storyboard */,
 				BAD17AC11E2C11740029094F /* Assets.xcassets */,
 				BAD17AC31E2C11740029094F /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				BAD17ABB1E2C11740029094F /* GameScene.swift in Sources */,
 				BAD17ABD1E2C11740029094F /* GameViewController.swift in Sources */,
 				BAD17AB51E2C11740029094F /* AppDelegate.swift in Sources */,
+				BAD17ACD1E2FD40A0029094F /* MyUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +313,7 @@
 				BAD17ACB1E2C11740029094F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
