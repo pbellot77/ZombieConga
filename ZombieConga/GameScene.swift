@@ -63,6 +63,7 @@ class GameScene: SKScene {
 	
 	override func didMove(to view: SKView) {
 		
+		playBackgroundMusic(filename: "backgroundMusic.mp3")
 		backgroundColor = SKColor.black
 		
 		// create the sprite
@@ -90,7 +91,7 @@ class GameScene: SKScene {
 				},
 				SKAction.wait(forDuration: 1.0)])))
 		
-		debugDrawPlayableArea()
+		//debugDrawPlayableArea()
 	}
 	
 	override func update(_ currentTime: TimeInterval) {
@@ -120,6 +121,11 @@ class GameScene: SKScene {
 		if lives <= 0 && !gameOver {
 			gameOver = true
 			print("You lose!")
+			backgroundMusicPlayer.stop()
+			let gameOverScene = GameOverScene(size: size, won: false)
+			gameOverScene.scaleMode = scaleMode
+			let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+			view?.presentScene(gameOverScene, transition: reveal)
 		}
 	}
 	
@@ -197,7 +203,7 @@ class GameScene: SKScene {
 		                         y: CGFloat.random(min: playableRect.minY + enemy.size.height/2,
 		                                           max: playableRect.maxY - enemy.size.height/2))
 		addChild(enemy)
-		let actionMove = SKAction.moveTo(x: -enemy.size.width/2, duration: 2.0)
+		let actionMove = SKAction.moveTo(x: -enemy.size.width/2, duration: 1.5)
 		let actionRemove = SKAction.removeFromParent()
 		enemy.run(SKAction.sequence([actionMove, actionRemove]))
 	}
@@ -319,9 +325,14 @@ class GameScene: SKScene {
 			targetPosition = node.position
 		}
 		
-		if trainCount >= 15 && !gameOver {
+		if trainCount >= 10 && !gameOver {
 			gameOver = true
 			print("You win!")
+			backgroundMusicPlayer.stop()
+			let gameOverScene = GameOverScene(size: size, won: true)
+			gameOverScene.scaleMode = scaleMode
+			let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+			view?.presentScene(gameOverScene, transition: reveal)
 		}
 	}
 	
