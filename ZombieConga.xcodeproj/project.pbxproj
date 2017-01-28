@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA7D9A611E3AA3E400B65A65 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D9A601E3AA3E400B65A65 /* GameOverScene.swift */; };
 		BA7D9A631E3AAD7C00B65A65 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D9A621E3AAD7C00B65A65 /* MainMenuScene.swift */; };
+		BA7D9AAD1E3D284800B65A65 /* GLIMSTIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = BA7D9AAC1E3D284800B65A65 /* GLIMSTIC.TTF */; };
 		BA8F619E1E36BA4D00FE260E /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA8F61991E36BA4D00FE260E /* backgroundMusic.mp3 */; };
 		BA8F619F1E36BA4D00FE260E /* hitCat.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA8F619A1E36BA4D00FE260E /* hitCat.wav */; };
 		BA8F61A01E36BA4D00FE260E /* hitCatLady.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA8F619B1E36BA4D00FE260E /* hitCatLady.wav */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		BA7D9A601E3AA3E400B65A65 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		BA7D9A621E3AAD7C00B65A65 /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		BA7D9AAC1E3D284800B65A65 /* GLIMSTIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GLIMSTIC.TTF; sourceTree = "<group>"; };
 		BA8F61991E36BA4D00FE260E /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		BA8F619A1E36BA4D00FE260E /* hitCat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCat.wav; sourceTree = "<group>"; };
 		BA8F619B1E36BA4D00FE260E /* hitCatLady.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCatLady.wav; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				BAD17ACC1E2FD40A0029094F /* MyUtils.swift */,
 				BAD17ABE1E2C11740029094F /* Main.storyboard */,
 				BAD17AC11E2C11740029094F /* Assets.xcassets */,
+				BA7D9AAC1E3D284800B65A65 /* GLIMSTIC.TTF */,
 				BA8F61981E36BA4D00FE260E /* Sounds */,
 				BAD17AC31E2C11740029094F /* LaunchScreen.storyboard */,
 				BAD17AC61E2C11740029094F /* Info.plist */,
@@ -162,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7D9AAD1E3D284800B65A65 /* GLIMSTIC.TTF in Resources */,
 				BAD17AC01E2C11740029094F /* Main.storyboard in Resources */,
 				BA8F61A21E36BA4D00FE260E /* win.wav in Resources */,
 				BA8F619F1E36BA4D00FE260E /* hitCat.wav in Resources */,
