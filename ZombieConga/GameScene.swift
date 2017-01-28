@@ -126,21 +126,9 @@ class GameScene: SKScene {
 		}
 		lastUpdateTime = currentTime
 		
-		/*
-		if let lastTouchLocation = lastTouchLocation {
-			let diff = lastTouchLocation - zombie.position
-			if diff.length() <= zombieMovePointsPerSec * CGFloat(dt) {
-				zombie.position = lastTouchLocation
-				velocity = CGPoint.zero
-				stopZombieAnimation()
-			} else {
-				*/
-		
-				move(sprite: zombie, velocity: velocity)
-				rotate(sprite: zombie, direction: velocity,
-				       rotateRadiansPerSec: zombieRotateRadiansPerSec)
-			/*}
-		}*/
+		move(sprite: zombie, velocity: velocity)
+		rotate(sprite: zombie, direction: velocity,
+					 rotateRadiansPerSec: zombieRotateRadiansPerSec)
 		
 		boundsCheckZombie()
 		moveTrain()
@@ -156,8 +144,6 @@ class GameScene: SKScene {
 			let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
 			view?.presentScene(gameOverScene, transition: reveal)
 		}
-		
-		//cameraNode.position = zombie.position
 	}
 	
 	override func didEvaluateActions() {
@@ -185,6 +171,7 @@ class GameScene: SKScene {
 		guard let touch = touches.first else {
 			return
 		}
+		
 		let touchLocation = touch.location(in: self)
 		sceneTouched(touchLocation: touchLocation)
 	}
@@ -193,6 +180,7 @@ class GameScene: SKScene {
 		guard let touch = touches.first else {
 			return
 		}
+		
 		let touchLocation = touch.location(in: self)
 		sceneTouched(touchLocation: touchLocation)
 	}
@@ -235,7 +223,8 @@ class GameScene: SKScene {
 		                                           max: cameraRect.maxY - enemy.size.height/2))
 		enemy.zPosition = 50
 		addChild(enemy)
-		let actionMove = SKAction.moveBy(x: -(size.width + enemy.size.width), y: 0, duration: 2.0)
+		let actionMove = SKAction.moveBy(x: -(size.width + enemy.size.width),
+		                                 y: 0, duration: 2.0)
 		let actionRemove = SKAction.removeFromParent()
 		enemy.run(SKAction.sequence([actionMove, actionRemove]))
 	}
@@ -284,7 +273,9 @@ class GameScene: SKScene {
 		cat.setScale(1.0)
 		cat.zRotation = 0
 		
-		let turnGreen = SKAction.colorize(with: SKColor.green, colorBlendFactor: 1.0, duration: 0.2)
+		let turnGreen = SKAction.colorize(with: SKColor.green,
+		                                  colorBlendFactor: 1.0,
+		                                  duration: 0.2)
 		cat.run(turnGreen)
 		run(catCollisionSound)
 	}
@@ -352,7 +343,9 @@ class GameScene: SKScene {
 				let direction = offset.normalized()
 				let amountToMovePerSec = direction * self.catMovePointsPerSec
 				let amountToMove = amountToMovePerSec * CGFloat(actionDuration)
-				let moveAction = SKAction.moveBy(x: amountToMove.x, y: amountToMove.y, duration: actionDuration)
+				let moveAction = SKAction.moveBy(x: amountToMove.x,
+				                                 y: amountToMove.y,
+				                                 duration: actionDuration)
 				node.run(moveAction)
 			}
 			targetPosition = node.position
@@ -434,37 +427,10 @@ class GameScene: SKScene {
 		let y = cameraNode.position.y - size.height/2 + (size.height - playableRect.height)/2
 		return CGRect(x: x, y: y, width: playableRect.width, height: playableRect.height)
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-} // end of GameScene
+} /* end of GameScene */
+
+
+
+
+
+
